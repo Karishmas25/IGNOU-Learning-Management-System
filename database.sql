@@ -1,0 +1,53 @@
+-- Create the LMS database
+CREATE DATABASE IF NOT EXISTS lms_db;
+
+-- Select the database
+USE lms_db;
+
+-- 1. User Table
+CREATE TABLE IF NOT EXISTS User (
+userId INT(11) PRIMARY KEY AUTO_INCREMENT,
+username VARCHAR(50) NOT NULL UNIQUE,
+password VARCHAR(255) NOT NULL,
+role VARCHAR(20) NOT NULL
+);
+
+-- 2. StudyMaterial Table
+CREATE TABLE IF NOT EXISTS StudyMaterial (
+materialId INT(11) PRIMARY KEY AUTO_INCREMENT,
+title VARCHAR(100) NOT NULL,
+subjectCode VARCHAR(20) NOT NULL,
+filePath VARCHAR(255) NOT NULL
+);
+
+-- 3. Quiz Table
+CREATE TABLE IF NOT EXISTS Quiz (
+quizId INT(11) PRIMARY KEY AUTO_INCREMENT,
+quizTitle VARCHAR(100) NOT NULL,
+totalMarks INT(5) NOT NULL,
+timeLimit INT(5) NOT NULL
+);
+
+-- 4. Question Table
+CREATE TABLE IF NOT EXISTS Question (
+quesId INT(11) PRIMARY KEY AUTO_INCREMENT,
+quizId INT(11) NOT NULL,
+questionText TEXT NOT NULL,
+optionA VARCHAR(100) NOT NULL,
+optionB VARCHAR(100) NOT NULL,
+optionC VARCHAR(100) NOT NULL,
+optionD VARCHAR(100) NOT NULL,
+correctAnswer VARCHAR(10) NOT NULL,
+FOREIGN KEY (quizId) REFERENCES Quiz(quizId)
+);
+
+-- 5. Result Table
+CREATE TABLE IF NOT EXISTS Result (
+resultId INT(11) PRIMARY KEY AUTO_INCREMENT,
+userId INT(11) NOT NULL,
+quizId INT(11) NOT NULL,
+score FLOAT NOT NULL,
+timeStamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY (userId) REFERENCES User(userId),
+FOREIGN KEY (quizId) REFERENCES Quiz(quizId)
+);
