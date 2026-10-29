@@ -45,14 +45,14 @@ The application includes separate functionalities for students and administrator
 
 ## 🧰 Technologies Used
 
-| Component       | Technology         |
-| --------------- | ------------------ |
-| Frontend        | HTML, CSS          |
-| Backend         | PHP                |
-| Database        | MySQL              |
-| Local Server    | XAMPP (Apache)     |
-| Code Editor     | Visual Studio Code |
-| Version Control | Git and GitHub     |
+| Component       | Technology            |
+| --------------- | --------------------- |
+| Frontend        | HTML, CSS, JavaScript |
+| Backend         | PHP                   |
+| Database        | MySQL                 |
+| Local Server    | XAMPP (Apache)        |
+| Code Editor     | Visual Studio Code    |
+| Version Control | Git and GitHub        |
 
 ## 🗄️ Database
 
@@ -113,7 +113,7 @@ Follow these steps to run the project locally:
 
 ## 🎓 Project Purpose
 
-This project has been developed as part of the Bachelor of Computer Applications (BCA) final-year project. It demonstrates the development of a database-driven web application using PHP and MySQL.
+This project has been developed as part of the Bachelor of Computer Applications (BCA) final-year project. It demonstrates the development of a database-driven web application using PHP, MySQL, HTML, CSS, and JavaScript.
 
 ## 👩‍💻 Author
 
